@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457786176161",
+    "project_id": "chatkgb-e90cb",
+    "storage_bucket": "chatkgb-e90cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457786176161:android:7db55c3bd4107707f336e0",
+        "android_client_info": {
+          "package_name": "com.example.chatkgb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457786176161-nrpqa5jsasp925agp2i0qroc2d44g1ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIVe7BqC2ag53djRzTjI5kyFKYuOcbTXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457786176161-nrpqa5jsasp925agp2i0qroc2d44g1ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

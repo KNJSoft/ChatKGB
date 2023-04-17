@@ -5,7 +5,7 @@
     <item
         android:title="settings"
         android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
+        android:icon="@drawable/baseline_settings_24"
         app:showAsAction="always"/>
     <item
         android:title="logout"
