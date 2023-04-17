@@ -16,6 +16,6 @@ class AccuielActivity : AppCompatActivity() {
                 startActivity(it)
             }
             finish()
-        },5000)
+        },3000)
     }
 }

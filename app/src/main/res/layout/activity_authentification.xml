@@ -19,17 +19,13 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/py" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailauth"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -42,6 +38,7 @@
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordauth"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -54,6 +51,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/auth"
         android:layout_height="55dp"
         android:layout_width="match_parent"
         android:layout_gravity="center_horizontal"
@@ -64,7 +62,7 @@
 
 </LinearLayout>
     <TextView
-
+        android:id="@+id/inscription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Créer un compte"
