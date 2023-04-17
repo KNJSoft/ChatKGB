@@ -25,6 +25,7 @@
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Nom"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -38,6 +39,7 @@
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Mail"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -51,6 +53,7 @@
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Password"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -66,6 +69,7 @@
             android:layout_width="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirpassword"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 app:boxBackgroundColor="@color/white"
@@ -78,6 +82,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/ins"
             android:layout_height="55dp"
             android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
