@@ -50,11 +50,11 @@ class Authentification : AppCompatActivity() {
                     passwordauth.isEnabled=true
                 }
                 if(email.isEmpty()){
-                    emailauth.error="L'email de passe est obligatoire!!!"
+                    emailauth.error="L'email est obligatoire!!!"
                     emailauth.isEnabled=true
                 }
             }else{
-                sigin(email,password)
+                //sigin(email,password)
                 fbauth.signInWithEmailAndPassword(email,password).addOnCompleteListener{
                     if (it.isSuccessful){
                         Intent(this, MainActivity::class.java).also {
@@ -71,10 +71,10 @@ class Authentification : AppCompatActivity() {
 
         }
     }
-    fun sigin(email:String,password:String){
-        /*Log.d("signin","signin")
+    /*fun sigin(email:String,password:String){
+        Log.d("signin","signin")
         if (email=="knjprod@gmail.com" && password=="azerty") {
 
-        }*/
-    }
+        }
+    }*/
 }
