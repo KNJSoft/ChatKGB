@@ -12,7 +12,7 @@ class AccuielActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_accuiel)
         Handler(Looper.getMainLooper()).postDelayed({
-            Intent(this,Authentification::class.java).also {
+            Intent(this,MainActivity::class.java).also {
                 startActivity(it)
             }
             finish()
