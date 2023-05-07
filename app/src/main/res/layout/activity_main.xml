@@ -12,16 +12,25 @@
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:src="@drawable/background"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/liste_amis"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"
+        tools:itemCount="2"
+        tools:listitem="@layout/listes_amis" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/message"
-        app:tint="@color/white"/>
+        app:tint="@color/white" />
 
 </RelativeLayout>
