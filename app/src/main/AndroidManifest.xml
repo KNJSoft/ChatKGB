@@ -13,7 +13,18 @@
         android:theme="@style/Theme.ChatKGB"
         tools:targetApi="31">
         <activity
+            android:name=".activity.Search"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity"
+            android:label="Rechecher"/>
+        <activity
+            android:name=".activity.Chatact"
+            android:exported="false"
+            android:parentActivityName=".activity.MainActivity" />
+        <activity
             android:name=".activity.Settings"
+            android:parentActivityName=".activity.MainActivity"
+            android:label="Paramètre"
             android:exported="false" />
         <activity
             android:name=".activity.Inscription"

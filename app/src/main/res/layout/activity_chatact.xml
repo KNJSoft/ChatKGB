@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Chatact">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewchat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="6dp"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_right"/>
+
+    <RelativeLayout
+        android:id="@+id/layoutchat"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="4dp">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/send"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:tint="@color/white"
+            app:fabSize="normal"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/send"/>
+        <EditText
+            android:id="@+id/edit"
+            android:layout_toStartOf="@+id/send"
+            android:background="@drawable/bg_edit"
+            android:hint="Message"
+            android:paddingStart="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp">
+        </EditText>
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

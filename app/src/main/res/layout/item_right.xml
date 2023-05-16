@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/bg_right"
+        android:gravity="end"
+        android:layout_gravity="end"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/idmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="salut mon frere"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+        />
+        <TextView
+            android:id="@+id/idheure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:52"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+        />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.Settings">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"/>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/avatar"
+            android:layout_marginBottom="50dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Noms"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:boxBackgroundColor="@color/white"
+                android:background="@color/white"
+                android:hint="Nom"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Mails"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                app:boxBackgroundColor="@color/white"
+                android:background="@color/white"
+                android:hint="Email"
+                android:layout_marginTop="24dp"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/enrs"
+            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            app:cornerRadius="4dp"
+            android:text="Enregistrer"
+            android:layout_marginTop="50dp"
+        />
+
+    </LinearLayout>
+</RelativeLayout>

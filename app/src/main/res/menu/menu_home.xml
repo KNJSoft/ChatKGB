@@ -4,7 +4,7 @@
 
     <item
         android:title="settings"
-        android:id="@+id/settings"
+        android:id="@+id/idsettings"
         android:icon="@drawable/baseline_settings_24"
         app:showAsAction="always"/>
     <item

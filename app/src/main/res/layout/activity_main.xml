@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.Authentification">
+    tools:context=".activity.MainActivity">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,6 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        app:fabSize="normal"
         android:src="@drawable/message"
         app:tint="@color/white" />
 
