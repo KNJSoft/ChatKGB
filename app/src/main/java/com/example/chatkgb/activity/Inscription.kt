@@ -9,6 +9,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class Inscription : AppCompatActivity() {
@@ -55,12 +56,26 @@ class Inscription : AppCompatActivity() {
                     confirmpassword.error="Mot de passe incorrect!!!"
                     confirmpassword.isEnabled=true
                 }else{
+                    //firebase
                     fbauth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener{
                         if (it.isSuccessful){
-                            Intent(this, MainActivity::class.java).also {
-                                startActivity(it)
+                            //firestore
+                            val user= hashMapOf(
+                                "nom" to Nom,
+                                "email" to mail,
+                            )
+                            val db = Firebase.firestore
+                            val iduser=fbauth.currentUser
+                            db.collection("users").document(iduser!!.uid).set(user).addOnSuccessListener {
+                                Intent(this, MainActivity::class.java).also {
+                                    startActivity(it)
+                                }
+                            }.addOnFailureListener{
+                                confirmpassword.error="Erreur survenue!!!"
+                                confirmpassword.isEnabled=true
                             }
-                            finish()
+
+
                         }else{
                             confirmpassword.error="Erreur survenue!!!"
                             confirmpassword.isEnabled=true

@@ -13,6 +13,8 @@ import com.example.chatkgb.adapter.Amisrecycleadapter
 import com.example.chatkgb.adapter.UserRecycle
 import com.example.chatkgb.model.Amis
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     lateinit var amisrecycleadapter: Amisrecycleadapter
@@ -60,6 +62,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId==R.id.logout){
+            val auth=Firebase.auth
+            auth.signOut()
             Intent(this,Authentification::class.java).also {
                 startActivity(it)
             }

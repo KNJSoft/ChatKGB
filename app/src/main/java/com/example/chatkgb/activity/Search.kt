@@ -22,9 +22,9 @@ class Search : AppCompatActivity() {
         liste=findViewById(R.id.liste)
         editsearch=findViewById(R.id.editrech)
         val user = mutableListOf(
-            User("knjprod@gmail.com","KNJ Soft",""),
-            User("knjprod.py@gmail.com","Dr KNJ",""),
-            User("joel@gmail.com","joel Ng",""),
+            User("vvv","knjprod@gmail.com","KNJ Soft",""),
+            User("fff","knjprod.py@gmail.com","Dr KNJ",""),
+            User("eerr","joel@gmail.com","joel Ng",""),
 
         )
         val userRecycle=UserRecycle()
