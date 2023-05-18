@@ -12,18 +12,6 @@
         android:alpha="0.4"
         android:scaleType="centerCrop"
         android:src="@drawable/background"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleviewchat"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="6dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="6dp"
-        tools:itemCount="6"
-        tools:listitem="@layout/item_right"/>
-
     <RelativeLayout
         android:id="@+id/layoutchat"
         android:layout_width="match_parent"
@@ -51,6 +39,19 @@
             android:layout_marginEnd="8dp">
         </EditText>
     </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewchat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_above="@+id/layoutchat"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="6dp"
+        tools:itemCount="6"
+        tools:listitem="@layout/item_right"/>
+
+
 
 
 

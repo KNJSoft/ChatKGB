@@ -9,11 +9,13 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class Inscription : AppCompatActivity() {
     private lateinit var fbauth: FirebaseAuth
+    lateinit var db:FirebaseFirestore
     lateinit var Nom: TextInputEditText
     lateinit var mail: TextInputEditText
     lateinit var password: TextInputEditText
@@ -22,6 +24,7 @@ class Inscription : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inscription)
+        db = Firebase.firestore
         fbauth = Firebase.auth
         Nom=findViewById(R.id.Nom)
         mail=findViewById(R.id.Mail)
@@ -61,15 +64,16 @@ class Inscription : AppCompatActivity() {
                         if (it.isSuccessful){
                             //firestore
                             val user= hashMapOf(
-                                "nom" to Nom,
-                                "email" to mail,
+                                "nom" to nom,
+                                "email" to email,
                             )
-                            val db = Firebase.firestore
+
                             val iduser=fbauth.currentUser
                             db.collection("users").document(iduser!!.uid).set(user).addOnSuccessListener {
                                 Intent(this, MainActivity::class.java).also {
                                     startActivity(it)
                                 }
+                                finish()
                             }.addOnFailureListener{
                                 confirmpassword.error="Erreur survenue!!!"
                                 confirmpassword.isEnabled=true

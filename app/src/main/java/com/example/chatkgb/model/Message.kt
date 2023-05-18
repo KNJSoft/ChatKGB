@@ -5,5 +5,7 @@ data class Message(
     val rec:String,
     val text:String,
     val hr:Long,
-    val isrec:Boolean=true
-)
+    var isrec:Boolean=true
+){
+    constructor(): this("","","",0)
+}

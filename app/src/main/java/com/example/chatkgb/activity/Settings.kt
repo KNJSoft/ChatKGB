@@ -1,10 +1,14 @@
 package com.example.chatkgb.activity
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.bumptech.glide.Glide
 import com.example.chatkgb.R
 import com.example.chatkgb.model.User
 import com.google.android.material.button.MaterialButton
@@ -17,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import java.io.ByteArrayOutputStream
+import java.util.*
 import kotlin.math.log
 
 class Settings : AppCompatActivity() {
@@ -44,8 +51,7 @@ class Settings : AppCompatActivity() {
                     var usrs = result.toObject(User::class.java)
                     usrs?.let {
                         usrs.uuid = user!!.uid
-                        noms.editText?.setText(usrs.nom)
-                        emails.editText?.setText(usrs.email)
+                        setuser(usrs)
                     }
                 }
             }
@@ -55,11 +61,51 @@ class Settings : AppCompatActivity() {
 
         val img=registerForActivityResult(ActivityResultContracts.GetContent()){
             it?.let {
-                pp.setImageURI(it)
+                Glide.with(this).load(it).placeholder(R.drawable.avatar).into(pp)
             }
         }
         pp.setOnClickListener{
             img.launch("image/*")
+        }
+    }
+
+    private fun setuser(usrs: User) {
+        noms.editText?.setText(usrs.nom)
+        emails.editText?.setText(usrs.email)
+        usrs.image?.let {
+            Glide.with(this).load(it).placeholder(R.drawable.avatar).into(pp)
+        }
+        btn.setOnClickListener{
+            noms.isErrorEnabled=false
+            var storageRef = Firebase.storage.reference
+            val refimg=storageRef.child("images/${usrs.uuid}")
+            val bitmap=(pp.drawable as BitmapDrawable).bitmap
+            val baos=ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos)
+            val data=baos.toByteArray()
+            //mise a jour de l'image dans firebase storage
+            val uploadimg=refimg.putBytes(data)
+            uploadimg.addOnSuccessListener { taskSnapShot ->
+                refimg.downloadUrl.addOnSuccessListener { uri ->
+                    val urlimg=uri.toString()
+                    usrs.image=urlimg
+                    updateinfouser(usrs)
+                }
+            }
+            updateinfouser(usrs)
+        }
+    }
+
+    private fun updateinfouser(usrs: User) {
+        var updateuser= hashMapOf<String,Any>(
+            "nom" to noms.editText?.text.toString(),
+            "imge" to (usrs.image ?: "")
+        )
+        db.collection("users").document(usrs.uuid).update(updateuser).addOnSuccessListener {
+            Toast.makeText(this,"mise a jour réuissi",Toast.LENGTH_LONG).show()
+        }.addOnFailureListener{
+            noms.error="Erreur,reessayer !!!"
+            noms.isErrorEnabled=true
         }
     }
 }
