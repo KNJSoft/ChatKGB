@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.chatkgb.R
 import com.example.chatkgb.activity.Chatact
 import com.example.chatkgb.model.Amis
@@ -29,9 +30,12 @@ class Amisrecycleadapter: RecyclerView.Adapter<Amisrecycleadapter.Viewolder>(){
             msgamis.text=amis.lastmeg
             val sdf=SimpleDateFormat("HH:mm", Locale.getDefault())
             heuremsg.text=sdf.format(amis.heure)
+            if (amis.image.isNotEmpty()){
+                Glide.with(itemView.context).load(amis.image).placeholder(R.drawable.avatar).into(imageamis)
+            }
             itemView.setOnClickListener{
                 Intent(itemView.context, Chatact::class.java).also {
-                    it.putExtra("amis",amis.nom)
+                    it.putExtra("amis",amis.uuid)
                     itemView.context.startActivity(it)
                 }
             }

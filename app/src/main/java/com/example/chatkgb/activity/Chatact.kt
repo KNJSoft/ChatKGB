@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatkgb.R
 import com.example.chatkgb.adapter.Chatrecycle
+import com.example.chatkgb.model.Amis
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.example.chatkgb.model.Message
 import com.example.chatkgb.model.User
@@ -92,6 +93,12 @@ class Chatact : AppCompatActivity() {
                     recycleviewchat.scrollToPosition(mess.size-1)
                 }.addOnFailureListener{
                     Log.e("Chat","erreur",it)
+                }
+                val amis=Amis("",usrs.nom,msg.text,System.currentTimeMillis(),usrs.image?: "")
+                db.collection("users").document(user!!.uid).collection("amis").document(usrs.uuid).set(amis).addOnSuccessListener {
+                    Log.d("Chat","amis ajouter avec succes")
+                }.addOnFailureListener{
+                    Log.e("Chat","Erreur d'ajout",it)
                 }
             }
         }

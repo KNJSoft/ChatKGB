@@ -21,7 +21,8 @@
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
             android:scaleType="centerCrop"
-            android:src="@drawable/avatar" />
+            android:src="@drawable/avatar"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"/>
 
         <TextView
             android:id="@+id/name"
