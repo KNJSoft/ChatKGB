@@ -20,5 +20,5 @@ C'est une application mobile développée avec kotlin avec intégration de Fireb
 
 ## APK
 
-**Envie de tester l'app??? Contacter moi pour recevoir la version beta!**
+Cliquez ici pour [telecharger]()  l'application
 - 📫 Me contacter **knjprod@gmail.com / knjprod.py@gmail.com**
