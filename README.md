@@ -7,15 +7,15 @@ C'est une application mobile développée avec kotlin avec intégration de Fireb
 
 ## Caractéristiques
 - [x] Android
-- [] IOS
+- [ ] IOS
 - [x] Création compte utilisateur
 - [x] Authentification
 - [x] Rcherche des utilisateurs
 - [x] Envoyer/Recevoir des messages en temps réel
 - [x] Mise a jour du nom
 - [x] Mise a jour de la photo de profile
-- [] Verification d'email
-- [] Mise a jour mot de passe
+- [ ] Verification d'email
+- [ ] Mise a jour mot de passe
 - [x] Sécurité
 
 ## APK
