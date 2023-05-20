@@ -2,7 +2,7 @@
 
 C'est une application mobile développée avec kotlin avec intégration de Firebase,Firestore et le Storage;le but c'est la conversation sécurisée.
 
-<img src="./chat.jpg" />
+<img src="./chat.png" />
 
 
 ## Caractéristiques
